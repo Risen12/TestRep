@@ -1,0 +1,5 @@
+.table, td, th {border: 3px solid #15D4FC; color: white;}
+th {color: black;background: #15D4FC;}
+.table {border-collapse: collapse;}
+.td {background: #15D4FC; text-align: center;}
+.tr {text-align: left; background: #15D4FC;}

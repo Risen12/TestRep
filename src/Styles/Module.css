@@ -1,0 +1,142 @@
+#module
+{
+    background-image: url(../Images/module_rectangular.svg);
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+    border: 6px solid #00FFFF;
+    box-shadow: 0 0px 2px 2px #2F4F4F;
+    grid-row-gap: 7px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-areas:
+    "shop_name shop_name shop_name"
+    ".  tv  ."
+    "cm  cooler_syrup glasses"
+    "water dwater garbage";
+    grid-template-rows: 30px 150px 150px 150px;
+    align-content: space-between;
+
+}
+
+
+#Shop_name
+{
+    grid-area: shop_name;
+    margin-top: 10px;
+    font-size: 24px; font-family: Crystal; 
+    color: #00FF00; 
+    width: 450px;
+    margin-left: 25px;
+    height: 35px;
+}
+
+
+#TV_container
+{
+    grid-area: tv;
+    margin-left: -20px;
+    margin-top: -45px;
+}
+
+#TV
+{
+    width: 260px;
+}
+
+
+#CM_container
+{
+    grid-area: cm;
+    margin-top: -153px;
+}
+
+#CM
+{
+    width: 112px;
+}
+
+
+#Cooler_container
+{
+    grid-area: cooler_syrup;
+    margin-top: -97px;
+    margin-left: -20px;
+}
+
+#Cooler
+{
+    width: 112px;
+}
+
+
+#Syrups_container
+{
+    grid-area: cooler_syrup;
+    margin-top: -105px;
+    margin-left: 95px;
+}
+
+#Syrups
+{
+    width: 112px;
+}
+
+
+#Glasses_container
+{
+    grid-area: glasses;
+    margin-top: -26px;
+}
+
+#glassM
+{
+    width: 68px;
+    margin-left: -30px;
+
+}
+
+#glassS
+{
+    width: 68px;
+}
+
+
+#Water_container
+{
+    grid-area: water;
+    margin-top: -110px;
+}
+
+#Water
+{
+    width: 140px;
+}
+
+
+#DWater_container
+{
+    grid-area: dwater;
+    margin-top: -110px;
+}
+
+#DWater
+{
+    width: 140px;
+    margin-left: 25px;
+}
+
+
+#Garbage_container
+{
+    grid-area: garbage;
+    margin-top: -17px;
+}
+
+#Garbage
+{
+    width: 155px;
+    margin-left: -45px;
+}
+

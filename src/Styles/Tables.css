@@ -1,0 +1,27 @@
+.articles
+{
+    color: black; 
+    font-size: 24px; 
+    margin: 0.3em; 
+    padding: 2px;
+}
+
+#article_cell
+{
+    border: none;
+    height: 30px;
+}
+
+
+.tables
+{
+    background: linear-gradient(#37B81D, 5%, #20E679, #15FCA3 20%, 20%, #3D3F3F 17%, #212222 41%, black);
+    border: 5px solid #00FFFF;
+    border-radius: 15px;
+    box-shadow: 0 0px 2px 2px #2F4F4F;
+    width: 800px;
+    font-size: 15px;
+    table-layout: fixed;
+}
+
+

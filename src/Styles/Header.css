@@ -1,0 +1,113 @@
+#header
+{
+    border: 6px solid #00FFFF;
+    border-radius: 20px;
+    box-shadow: 0 0px 2px 2px #2F4F4F;				
+    background: linear-gradient(#3D3F3F, black);
+    display: grid;
+    grid-template-areas:
+    "server_status test_button header_text username user_ava";
+    grid-template-columns: 250px 250px 1200px 100px 100px;
+}
+
+
+#server_status
+{
+    grid-area: "server_status";
+    display: flex;
+	flex-direction: row;
+	width: 90px;
+	float: right;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 24px;
+    height: 24px;
+    background-color: #ABFF00;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+    text-align: center;
+}
+
+
+#server_text
+{
+    grid-area: "server_status";
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+
+#test_button
+{
+    grid-area: "test_button";
+    margin-top: 9px;
+    margin-left: -25px;
+}
+#btn
+{
+    text-decoration: none;
+	display: inline-block;
+    padding: 5px 30px;
+    border-radius: 20px;
+    background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    color: white;
+    box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+    transition: .5s;
+    outline: none;
+}
+#btn:hover {
+    box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
+    background-position: 0 0;
+}
+
+#header_text
+{
+    grid-area: "header_text";
+    margin-top: 20px;
+    text-align: center;
+    margin-right: 350px;
+}
+
+
+#username
+{
+    grid-area: "username";
+    margin-top: 20px;
+}
+
+
+#user_ava
+{
+    grid-area: "user_ava";
+    font-family: Crystal;
+    font-size: 18px;
+    text-align: center;
+    background-position: left;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    
+}
+#ava
+{
+    background: #BEB7BC;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+}
+#text_ava
+{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.7em;
+}
