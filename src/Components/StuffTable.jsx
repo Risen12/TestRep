@@ -1,8 +1,8 @@
 import React from "react";
 import "../Styles/Tables.css";
-import "../Styles/Stuff_table.css";
+import "../Styles/StuffTable.css";
 
-const Stuff_table = function()
+const StuffTable = function()
 {
     return(
         <table id="stuff_table" className="tables" cellPadding="6" cellSpacing="0.5">
@@ -26,4 +26,4 @@ const Stuff_table = function()
 };
 
 
-export default Stuff_table;
+export default StuffTable;

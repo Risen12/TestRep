@@ -1,9 +1,9 @@
 import React from "react";
-import "../Styles/Shop_table.css";
+import "../Styles/ShopTable.css";
 import "../Styles/Tables.css";
 
 
-const Shop_table = function()
+const ShopTable = function()
 {
     return(
         <table id="shop_table" className="tables"  cellPadding="6" cellSpacing="0.5">
@@ -26,4 +26,4 @@ const Shop_table = function()
 };
 
 
-export default Shop_table;
+export default ShopTable;

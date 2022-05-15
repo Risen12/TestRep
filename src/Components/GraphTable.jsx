@@ -1,9 +1,9 @@
 import React from "react";
 import "../Styles/Tables.css";
-import "../Styles/Graph_table.css";
+import "../Styles/GraphTable.css";
 
 
-const Graph_table = function()
+const GraphTable = function()
 {
     return(
         <table id="graph_table" className="tables"  cellPadding="6" cellSpacing="0.5">
@@ -31,4 +31,4 @@ const Graph_table = function()
 };
 
 
-export default Graph_table;
+export default GraphTable;
