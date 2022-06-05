@@ -22,6 +22,7 @@ import garbage1 from "../Images/gb-1.png";
 
 const Module = function()
 {
+
     const [States, setStates] = useState([tv0,cm0,cooler0,syrup0,glassM0,glassS0,water0,dwater0,garbage0]);
     useEffect(() =>
     {
