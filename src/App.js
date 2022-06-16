@@ -7,11 +7,12 @@ import "./Styles/App.css";
 import ShopTable from "./Components/ShopTable";
 import StuffTable from "./Components/StuffTable";
 import Informator from "./Informator";
+import Store from "./Store/Store";
 
 function App() {
   return (
     <div id="App">
-      <Informator/>
+      <Informator store={Store.info}/>
       <Header id="header"/>
       <Module id="module"/>
       <div id="tables">

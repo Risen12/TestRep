@@ -1,4 +1,4 @@
-import { createAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const defaultState =
 {
@@ -13,22 +13,27 @@ const defaultState =
     garbage:'0%'
 };
 
-
- export const UpdateData = createAction('UpdateData');
-
 const InfoSlice = createSlice({
     name: 'info_slice',
     initialState:defaultState,
     reducers:
     {
-        [UpdateData] : function(state, action)
+        UpdateData(state,action)
         {
-            
-        },
-
-
+            console.log("i see action");
+            console.log(action.payload);
+            state.tv = action.payload.tv;
+            state.cm = action.payload.cm;
+            state.cooler = action.payload.cooler;
+            state.syrups = action.payload.syrups;
+            state.glassM = action.payload.glassM;
+            state.glassS = action.payload.glassS;
+            state.water = action.payload.water;
+            state.dwater = action.payload.dwater;
+            state.garbage = action.payload.garbage;
+        }
     }
 });
 
 export default InfoSlice.reducer;
-
+export const {UpdateData} = InfoSlice.actions;

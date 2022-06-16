@@ -1,26 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
+import { UpdateData } from "./Store/Reducers/InfoSlice";
 
 class Informator extends React.Component
 {
+    constructor()
+    {
+        super();
+        this.currentState = {};
+    }
+
+
     render()
     {
         return null;
     };
-
     componentDidMount()
     {
-        let state = {
-            tv:'ok',
-            cm:'ok',
-            cooler:'ok',
-            syrups:'100%',
-            glassM:'100%',
-            glassS:'100%',
-            water:'0%',
-            dwater:'0%',
-            garbage:'0%'
-        };
-
+        
         function Request()
         {
             let url = "https://subabonent.ru/helen/api100.php";
@@ -35,7 +32,7 @@ class Informator extends React.Component
                     }
                     response.json().then(function(data)
                     {
-                        state = 
+                        let Initialstate = 
                         {
                             tv: data.data.values.tv,
                             cm: data.data.values.km,
@@ -48,7 +45,8 @@ class Informator extends React.Component
                             garbage: data.data.values.gb
                         };
                         console.log(JSON.stringify(data.data.values));
-                        console.log(state);
+                        this.currentState = Initialstate;
+                        console.log(this.currentState);
                         return data;
                     }
                     )
@@ -61,11 +59,30 @@ class Informator extends React.Component
                 }
             );
         };
-
         Request();
-
+        console.log(this.props.info);
+        const Update = () => UpdateData;
+        Update();
+        console.log(this.props.info);
     };
 
 };
 
-export default Informator;
+const MapStateToProps = (state) => {
+    return { 
+        info:state.info
+    }
+}
+
+// const mapDispatchToProps=(dispatch)=>({
+//    UpdateData:()=>dispatch(UpdateData(Informator.currentState))
+//   });
+/*   const mapDispatchToProps = (dispatch) => {
+    return {
+       UpdateData: () => dispatch(UpdateData())
+    }
+} */
+
+
+export default connect (MapStateToProps)(Informator);
+//export default Informator;

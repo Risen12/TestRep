@@ -18,6 +18,7 @@ import glassS1 from "../Images/ds-1.png";
 import water1 from "../Images/wt-1.png";
 import dwater1 from "../Images/ws-1.png";
 import garbage1 from "../Images/gb-1.png";
+import { useSelector } from "react-redux";
 
 
 const Module = function()
@@ -28,6 +29,12 @@ const Module = function()
     {
         setStates([tv1,cm1,cooler1,syrup1,glassM1,glassS1,water1,dwater1,garbage1]);
     },[]);
+
+    const current_state = useSelector(state => state.info);
+    console.log(current_state);
+
+    
+
     return(
         <div id="module">
             <marquee id="Shop_name" direction="left" scrollamount="8">Название магазина</marquee>
