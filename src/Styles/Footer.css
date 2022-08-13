@@ -1,10 +1,11 @@
 #footer
-{background: linear-gradient(#3D3F3F, black);
-border: 6px solid #00FFFF;
-border-radius: 15px;
-box-shadow: 0 0px 2px 2px #2F4F4F;
-margin-top: 130px;
-height: 50px;
+{
+    background: linear-gradient(#3D3F3F, black);
+    border: 6px solid #00FFFF;
+    border-radius: 15px;
+    box-shadow: 0 0px 2px 2px #2F4F4F;
+    margin-top: 125px;
+    height: 60px;
 }
 
 

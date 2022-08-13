@@ -8,6 +8,7 @@
     grid-template-areas:
     "server_status test_button header_text username user_ava";
     grid-template-columns: 250px 250px 1200px 100px 100px;
+    height: 67px;
 }
 
 
