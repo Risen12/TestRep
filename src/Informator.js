@@ -1,19 +1,24 @@
-import { current } from "@reduxjs/toolkit";
-import React from "react";
+import { Component } from "react";
+import { connect } from "react-redux";
 import { UpdateData } from "./Store/Reducers/InfoSlice";
 
-class Informator extends React.Component
+class Informator extends Component
 {
     constructor(props){ 
         super(props);
         this.state = {info:{}}; 
         this.updateState = this.updateState.bind(this);
       };
-        
 
     updateState =(NewState) => 
     {
-        this.setState({info:NewState}, function(){console.log(this.state)});
+        this.setState({info:NewState},function()
+        {
+            console.log(this.state.info);
+            this.props.dispatch(UpdateData(this.state.info.data.values));
+            console.log(this.props.info);
+            console.log(this.state.info);
+        });
     };
 
     componentDidMount()
@@ -24,14 +29,19 @@ class Informator extends React.Component
         fetch(url)
         .then(response => response.json())
         .then(data => this.updateState(data));
-
     }; 
 
     render()
     {
         return true;
     };
-
 };
 
-export default Informator;
+function mapStateToProps (state) {
+    return {
+      info: state.info
+    }
+  }
+
+
+export default connect(mapStateToProps)(Informator);

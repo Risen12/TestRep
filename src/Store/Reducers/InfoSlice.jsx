@@ -13,27 +13,28 @@ const defaultState =
     garbage:'0%'
 };
 
-const InfoSlice = createSlice({
+export const InfoSlice = createSlice({
     name: 'info_slice',
     initialState:defaultState,
     reducers:
     {
-        UpdateData(state,action)
+        UpdateData: (state,action) =>
         {
-            console.log("i see action");
-            console.log(action.payload);
+            state.cm = action.payload.km;
             state.tv = action.payload.tv;
-            state.cm = action.payload.cm;
-            state.cooler = action.payload.cooler;
-            state.syrups = action.payload.syrups;
-            state.glassM = action.payload.glassM;
-            state.glassS = action.payload.glassS;
-            state.water = action.payload.water;
-            state.dwater = action.payload.dwater;
-            state.garbage = action.payload.garbage;
+            state.cooler = action.payload.fr;
+            state.syrups = action.payload.sp;
+            state.glassM = action.payload.dl;
+            state.glassS = action.payload.ds;
+            state.garbage = action.payload.gb;
+            state.water = action.payload.wt;
+            state.dwater = action.payload.ws;
         }
     }
 });
 
-export default InfoSlice.reducer;
-export const {UpdateData} = InfoSlice.actions;
+const {actions , reducer} = InfoSlice;
+
+export const {UpdateData} = actions;
+
+export default reducer;
