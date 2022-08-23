@@ -4,7 +4,7 @@ const defaultState =
 {
     tv:'ok',
     cm:'ok',
-    cooler:'ok',
+    cooler:'st1',
     syrups:'100%',
     glassM:'100%',
     glassS:'100%',
