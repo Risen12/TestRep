@@ -18,7 +18,7 @@ const Header = function()
             </div>
             <div id="test_button">
                 <button id="btn" onClick={() => {
-                        let url = "https://subabonent.ru/helen/api100.php";
+                        let url = "https://subabonent.ru/danila/api100.php";
                         fetch(url)
                         .then(response => response.json())
                         .then(state => dispatch(UpdateData(state.data.values)));

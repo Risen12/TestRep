@@ -23,7 +23,7 @@ class Informator extends Component
 
     componentDidMount()
     {
-        let url = "https://subabonent.ru/helen/api100.php";
+        let url = "https://subabonent.ru/danila/api100.php";
         console.log(this.state);
 
         fetch(url)
