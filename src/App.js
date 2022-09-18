@@ -6,6 +6,7 @@ import ModulePage from "./Pages/ModulePage";
 import Autorization from "./Pages/Autorization";
 
 function App() {
+  
   return (
     <div>
       <Router>

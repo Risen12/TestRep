@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Crystal;
+    src: url(/src/Styles/Fonts/Crystal.ttf);
+    
+}
+#main
+{
+    display: grid;
+    grid-template-areas: "header" "header"
+                         "devices" "client_info"
+                         "footer" "footer";
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 0.43fr 3.62fr 0.43fr;
+    margin: 0%;
+}
+
+#cabinet_header
+{
+    grid-area: header;
+    grid-column: 1 /3;
+    grid-row: 1;
+}
+
+#cabinet_footer
+{
+    grid-area: footer;
+    grid-column: 1 /3;
+    grid-row: 3;
+}
+
+#devices
+{
+    grid-area: devices;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#client_info
+{
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    height: fit-content;
+    grid-area: client_info;
+    grid-column: 2;
+    grid-row: 2;
+    border: 6px solid #00FFFF;
+    border-radius: 20px;
+    box-shadow: 0 0px 2px 2px #2F4F4F;				
+    background: linear-gradient(#3D3F3F, black);
+}

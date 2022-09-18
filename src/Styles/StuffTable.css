@@ -2,6 +2,7 @@
 {
     margin-top: 135px;
 }
+
 .table, td, th {border: 3px solid #15D4FC; color: white; table-layout: fixed;}
 th {color: black;background: #15D4FC;}
 .table {border-collapse: collapse;}
