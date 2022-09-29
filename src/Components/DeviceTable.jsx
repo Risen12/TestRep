@@ -7,6 +7,7 @@ const DeviceTable = function()
     return(
         <div id="device_table">
             <Device/>
+            <Device device={"Пылесос"} IP={"192.168.55.100"} address={"Большие Колпаны, д.120"}/>
             <button id="AddDeviceButton">Добавить новое устройство</button>
         </div>
 

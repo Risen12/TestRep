@@ -4,9 +4,12 @@ import Footer from "../Components/Footer";
 import "../Styles/Autorization-page.css";
 import "../Styles/Header.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 
 function Autorization() {
+  const navigator = useNavigate();
   async function Auth() {
     let auth_data = {User:user,Pass:pass};
     let url = "https://subabonent.ru/danila/auth.php";
@@ -19,14 +22,19 @@ function Autorization() {
         },
         body: JSON.stringify(auth_data)
       });
-      console.log(auth_data);
+    console.log(auth_data);
     let result = await response.text();
     console.log(result);
-    if(result === "done")
+    if(result !== "error")
     {
       console.log("Аутенфикация пройдена.");
-      window.location.replace("http://localhost:3000/Cabinet");
+      
+      navigator("/Main");
       setCookie("auth",true,1);
+    }
+    else
+    {
+      alert("Ошибка авторизации");
     }
   };
 
@@ -61,7 +69,7 @@ function Autorization() {
   };
     return (
       <div id='Autorization-page'>
-        <Header id='Autorization_header'/>
+        <Header id='Autorization_header' type={"auth"}/>
         <div id='Autorization_content'>
             <form onSubmit={SubmitHandler} method="POST" id='Autorization_form'>
             <h1>Авторизация</h1>

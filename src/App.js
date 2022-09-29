@@ -1,9 +1,11 @@
 import React from "react";
-import "./Styles/App.css";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import "./Styles/Main.css";
+import {HashRouter as Router, Route,  Routes} from "react-router-dom";
 import Cabinet from "./Pages/Cabinet";
 import ModulePage from "./Pages/ModulePage";
 import Autorization from "./Pages/Autorization";
+import TestPage from "./Pages/TestPage";
+import AccumPage from "./Pages/AccumPage";
 
 function App() {
   
@@ -12,8 +14,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Autorization/>}></Route>
-          <Route path="/Cabinet" element={<Cabinet/>}></Route>
+          <Route path="/Main" element={<Cabinet/>}></Route>
           <Route path="/ModulePage" element={<ModulePage/>}></Route>
+          <Route path="/TestPage" element={<TestPage/>}></Route>
+          <Route path="/Accum" element={<AccumPage/>}></Route>
         </Routes>
       </Router>
     </div>

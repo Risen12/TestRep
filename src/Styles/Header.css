@@ -4,23 +4,19 @@
     border-radius: 20px;
     box-shadow: 0 0px 2px 2px #2F4F4F;				
     background: linear-gradient(#3D3F3F, black);
-    display: grid;
-    grid-template-areas:
-    "server_status test_button header_text username user_ava";
-    grid-template-columns: 250px 250px 1200px 100px 100px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
     height: 67px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 
 #server_status
-{
-    grid-area: "server_status";
-    display: flex;
-	flex-direction: row;
-	width: 90px;
+{   
 	float: right;
-    margin-top: 15px;
-    margin-left: 15px;
     width: 24px;
     height: 24px;
     background-color: #ABFF00;
@@ -32,19 +28,16 @@
 
 #server_text
 {
-    grid-area: "server_status";
-    margin-left: 30px;
-    margin-top: 5px;
+    margin-left: 2rem;
+    margin-top: 3px;
 }
 
 
 #test_button
 {
-    grid-area: "test_button";
-    margin-top: 9px;
-    margin-left: -25px;
+    margin-left: 7rem;
 }
-#btn
+.btn
 {
     text-decoration: none;
 	display: inline-block;
@@ -61,43 +54,44 @@
     transition: .5s;
     outline: none;
 }
-#btn:hover {
+.btn:hover {
     box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
     background-position: 0 0;
 }
 
 #header_text
 {
-    grid-area: "header_text";
-    margin-top: 20px;
+    justify-self: left;
+    flex-grow: 1;
+    align-self: center;
     text-align: center;
-    margin-right: 350px;
 }
 
 
 #username
 {
-    grid-area: "username";
-    margin-top: 20px;
+    flex-shrink: 1;
+    margin-right: 1rem;
 }
+
 
 
 #user_ava
 {
-    grid-area: "user_ava";
+    margin-right: 0.2rem;
+    margin-top: 5px;
     font-family: Crystal;
     font-size: 18px;
     text-align: center;
     background-position: left;
     height: 100%;
-    margin: 0;
     display: flex;
     flex-direction: row;
-    margin-top: 3px;
     
 }
 #ava
 {
+
     background: #BEB7BC;
     width: 50px;
     height: 50px;
@@ -110,5 +104,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.7em;
+    margin: 0.9em;
+}
+
+#button_panel
+{
+    margin-left: 100px;
+    display: flex;
+    column-gap: 10px;
+    flex-direction: row;
+    align-items: flex-end;
 }

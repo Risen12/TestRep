@@ -1,25 +1,4 @@
-@font-face {
-    font-family: Crystal;
-    src: url(/src/Styles/Fonts/Crystal.ttf);
-    
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-}
-
-body
-{
-    font-family: Crystal;
-    background-color: #808080;
-    color: white;
-    width: 100%;
-    height: 100%;
-}
-
-#App
+#modulePage
 {
     display: grid;
     grid-template-areas: 
@@ -48,6 +27,7 @@ body
 
 #tables
 {
+    margin-left: 158px;
     grid-area: tables;
     display: grid;
     grid-template-areas: 

@@ -34,7 +34,7 @@
 #Autorization_content
 {
     grid-row: 2;
-    grid-column: 3;
+    grid-column: 1;
     grid-area: form;
     justify-content: center;
     text-align: center;
