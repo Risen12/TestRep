@@ -1,11 +1,11 @@
 import React from "react";
 import "../Styles/MyAlert.css";
 
-const MyButton = function(props)
+const MyButton = ({id,text,onPress, type}) =>
 {
 
     return(
-            <button className="btn" >{props.text}</button>
+            <button id={id} className="btn" type={type} onClick={onPress} >{text}</button>
     )
 };
 

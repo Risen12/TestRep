@@ -1,4 +1,4 @@
-#MyAlert
+.MyAlert
 {
     display: none;
     cursor: pointer;
@@ -14,13 +14,13 @@
     text-decoration: none;
 }
 
-#AlertHeader
+.AlertHeader
 {
     color: red;
 
 }
 
-#AlertBody
+.AlertBody
 {
     display: flex;
     justify-content: center;

@@ -1,0 +1,15 @@
+.MyInput
+{
+    border-radius: 7px;
+    font-size: 14px;
+    background-color: black;
+    color:white;
+    outline: none;
+}
+
+
+
+.MyInput::placeholder
+{
+    color: white;
+}

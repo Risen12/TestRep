@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
+    
 }
 
 body
@@ -15,8 +16,16 @@ body
     font-family: Crystal;
     background-color: #808080;
     color: white;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
+
+
+}
+
+#root
+{
+    height: 100vh;
+    width: 100vw;
 }
 
 #TestPage
@@ -26,7 +35,7 @@ body
     "header header header"
     ". test_content ."
     "footer footer footer";
-    grid-template-rows: 1.5fr 2.56fr 0.5fr;
+    grid-template-rows: 15% 70% 15%;
     margin: 0%;
 
 }

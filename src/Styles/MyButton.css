@@ -1,3 +1,9 @@
+@font-face {
+    font-family: Crystal;
+    src: url(/src/Styles/Fonts/Crystal.ttf);
+    
+}
+
 .btn
 {
     text-decoration: none;

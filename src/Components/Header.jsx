@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { UpdateData } from "../Store/Reducers/InfoSlice";
 import "../Styles/Header.css";
+import MyButton from "../UI/MyButton";
 
 
 
@@ -34,15 +35,15 @@ const Header = function(props)
                     <div id="server_text">server</div>
                 </div>
                 <div id="button_panel">
-                    <button class="btn">Личный кабинет</button>
-                    <button class="btn">Помощь</button>
+                    <MyButton text={"Личный кабинет"} />
+                    <MyButton text={"Помощь"} />
                 </div>
                 <div id="header_text">Личный кабинет</div>
                 <div id="username">{props.username}</div>
                 <div id="user_ava">
                     <div id="ava"><p id="text_ava">{props.username}</p></div>
                 </div>
-                <button class="btn">Выйти</button>
+                <MyButton text={"Выйти"} />
             </div>
         )
         }
@@ -55,13 +56,13 @@ const Header = function(props)
                 </div>
                 <div id="button_panel">
                     <div id="test_button">
-                        <button class="btn" onClick={() => {
+                        <MyButton text={"ТЕСТ"} class="btn" onPress={() => {
                                 let url = "https://subabonent.ru/danila/api100.php";
                                 fetch(url)
                                 .then(response => response.json())
                                 .then(state => dispatch(UpdateData(state.data.values)));
                                 console.log("Функция Тест вызвана!");
-                        }}>ТЕСТ</button>
+                        }}/>
                     </div>
                 </div>
                 <div id="header_text">{props.device}</div>
@@ -80,13 +81,14 @@ const Header = function(props)
                 <div id="server_text">server</div>
             </div>
             <div id="test_button">
-                <button class="btn" onClick={() => {
+                <MyButton text={"ТЕСТ"} class="btn" click={() => {
+                        console.log("Вижу функцию");
                         let url = "https://subabonent.ru/danila/api100.php";
                         fetch(url)
                         .then(response => response.json())
                         .then(state => dispatch(UpdateData(state.data.values)));
                         console.log("Функция Тест вызвана!");
-                }}>ТЕСТ</button>
+                }}/>
             </div>
             <div id="header_text">RadaR3 - динамические системы наблюдения и контроля за промышленным оборудованием </div>
             <div id="username">username</div>

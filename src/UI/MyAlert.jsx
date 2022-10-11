@@ -5,9 +5,9 @@ const MyAlert = function()
 {
 
     return(
-        <div id="MyAlert">
-            <div id="AlertHeader">Ошибка</div>
-            <div id="AlertBody">Неправильный логин или пароль!</div>
+        <div className="MyAlert">
+            <div  className="AlertHeader">Ошибка</div>
+            <div  className="AlertBody">Неправильный логин или пароль!</div>
         </div>
     )
 };

@@ -13,7 +13,7 @@
 }
 
 
-#header
+#modulePage #header
 {
     grid-area: header;
 }
@@ -54,7 +54,7 @@
 }
 
 
-#footer
+#modulePage #footer
 {
     grid-area: footer;
     margin-top: 125px;

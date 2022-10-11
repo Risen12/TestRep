@@ -5,10 +5,16 @@ import "../Styles/Autorization-page.css";
 import "../Styles/Header.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { connect, useDispatch } from "react-redux";
+import { UpdateData } from "../Store/Reducers/userSlice";
+import MyButton from "../UI/MyButton";
+import MyInput from "../UI/MyInput";
+let current_state = {info:{}};
 
 
 
 function Autorization() {
+  const dispatch = useDispatch();
   const navigator = useNavigate();
   async function Auth() {
     let auth_data = {User:user,Pass:pass};
@@ -24,17 +30,23 @@ function Autorization() {
       });
     console.log(auth_data);
     let result = await response.text();
-    console.log(result);
+    //console.log(json_result[0]["device_ip"]);
+    //console.log(Object.keys(json_result).length);
+    //console.log(result); - выводит текст
     if(result !== "error")
     {
+      let json_result = JSON.parse(result);
+      let store_data = {"user":user,"devices_count": Object.keys(json_result).length,"devices": json_result};
       console.log("Аутенфикация пройдена.");
-      
+      dispatch(UpdateData(store_data));
       navigator("/Main");
       setCookie("auth",true,1);
     }
     else
     {
       alert("Ошибка авторизации");
+      setPass("");
+      setUser("");
     }
   };
 
@@ -47,6 +59,7 @@ function Autorization() {
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
   };
+
 
   const [user,setUser] = useState("");
   const [pass, setPass] = useState("");
@@ -73,9 +86,9 @@ function Autorization() {
         <div id='Autorization_content'>
             <form onSubmit={SubmitHandler} method="POST" id='Autorization_form'>
             <h1>Авторизация</h1>
-            <div>Имя пользователя</div><input type="text" className="MyInput" onChange={handleChangeUser} placeholder="Пользователь"></input>
-            <div>Пароль</div><input className="MyInput" placeholder="Пароль" onChange={handleChangePass} type="password"></input>
-            <div><button type="submit"  id="btn">ВОЙТИ</button></div>
+            <div>Имя пользователя</div><MyInput id="AuthInput" text={user} plholder="Имя пользователя" changeAction={handleChangeUser}/>
+            <div>Пароль</div><MyInput id="AuthInput" text={pass} plholder="Пароль" changeAction={handleChangePass} type="password"/>
+            <div><MyButton text={"Войти"} type="Submit"/></div>
             </form>
         </div>
         <Footer id='Autorization_footer'/>
@@ -83,4 +96,10 @@ function Autorization() {
     );
   };
   
-  export default  Autorization;
+  // функция для того, чтоб забрать текующее состояние store в определённом слайсе( в данном случае userSlice)
+  function mapStateToProps (current_state) {
+    return {
+      user: current_state.info
+    }
+  }
+  export default connect(mapStateToProps)(Autorization);

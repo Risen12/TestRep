@@ -1,13 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Device.css";
+import MyButton from "../UI/MyButton";
 
 const Device = function(props)
 {
     const navigator = useNavigate();
     function GoToDevice()
     {
-        if(props != undefined)
+        if(props !== undefined)
         {
             if(props.device.includes("Пылесос"))
             {
@@ -40,7 +41,7 @@ const Device = function(props)
                     <tr><td>Вид оборудования</td><td>{props.device ? props.device : "Кофейный модуль"}</td></tr>
                     </tbody>
             </table>   
-            <button id="GoToButton" onClick={GoToDevice}>Зайти в панель управления</button>    
+            <MyButton id="GoToButton" text={"Зайти в панель управления"} onPress={GoToDevice}/>    
         </div>
     )
 };
