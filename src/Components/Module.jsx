@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 
 
+
 function Checker(value, text_value = null, syrups_value = null)
 {
     var status = 1;
@@ -44,7 +45,50 @@ function Checker(value, text_value = null, syrups_value = null)
         status = 7;
         return status;
     }
-} 
+}
+
+
+function Garbage_checker(value)
+{
+    var status = 0;
+    value = parseInt(value,10);
+    if(value >= 0 && value <= 15)
+    {
+        status = 1;
+        return status;
+    }
+    else if(value > 15 && value <= 30)
+    {
+        status = 2;
+        return status;
+    }
+    else if(value > 30 && value <= 50)
+    {
+        status = 3;
+        return status;
+    }  
+    else if(value > 50 && value <= 75)
+    {
+        status = 4;
+        return status;
+    }  
+    else if(value > 75 && value < 90)
+    {
+        status = 5;
+        return status;
+    }
+    else if(value > 90 && value < 100)
+    {
+        status = 6;
+        return status;
+    }  
+    else
+    {
+        status = 7;
+        return status;
+    }  
+
+}
 
 
 const Module =  function()
@@ -85,8 +129,8 @@ const Module =  function()
             GlassM_state : require("../Images/dl-" + Checker(current_state.glassM) + ".png"),
             GlassS_state : require("../Images/ds-" + Checker(current_state.glassS) + ".png"),
             Water_state : require("../Images/wt-" + Checker(current_state.water) + ".png"),
-            DirtyWater_state : require("../Images/ws-" + Checker(current_state.dwater) + ".png"),
-            Garbage_state : require("../Images/gb-" + Checker(current_state.garbage) + ".png"),
+            DirtyWater_state : require("../Images/ws-" + Garbage_checker(current_state.dwater) + ".png"),
+            Garbage_state : require("../Images/gb-" + Garbage_checker(current_state.garbage) + ".png"),
         });
     },[useSelector(state => state.info)]); 
     current_state = useSelector(state => state.info);

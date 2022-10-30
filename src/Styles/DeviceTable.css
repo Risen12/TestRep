@@ -2,13 +2,16 @@
 {
     display:flex;
     border: 6px solid #00FFFF;
+    flex-wrap:wrap;
     border-radius: 20px;
     box-shadow: 0 0px 2px 2px #2F4F4F;				
     background: linear-gradient(#3D3F3F, black);
     padding:10px;
     height: 100%;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 8px;
+    width: fit-content;
+    max-width: 100%;
     
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Styles/Main.css";
 import {HashRouter as Router, Route,  Routes} from "react-router-dom";
 import Cabinet from "./Pages/Cabinet";
@@ -6,9 +6,11 @@ import ModulePage from "./Pages/ModulePage";
 import Autorization from "./Pages/Autorization";
 import TestPage from "./Pages/TestPage";
 import AccumPage from "./Pages/AccumPage";
+import Modal from "./UI/Modal";
 
 function App() {
-  
+
+
   return (
     <div>
       <Router>

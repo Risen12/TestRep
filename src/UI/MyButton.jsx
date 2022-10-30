@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/MyAlert.css";
+import "../Styles/MyButton.css";
 
 const MyButton = ({id,text,onPress, type}) =>
 {

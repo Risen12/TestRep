@@ -10,11 +10,11 @@ const Device = function(props)
     {
         if(props !== undefined)
         {
-            if(props.device.includes("Пылесос"))
+            if(props.device == "Пылесос")
             {
                 navigator("/TestPage");
             }
-            else
+            else if(props.device == "Кофейный модуль")
             {
                 navigator("/ModulePage");
             }
