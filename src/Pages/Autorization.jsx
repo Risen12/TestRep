@@ -1,6 +1,4 @@
-import Header from "../Components/Header";
 import React from "react";
-import Footer from "../Components/Footer";
 import "../Styles/Autorization-page.css";
 import "../Styles/Header.css";
 import { useState } from "react";
@@ -82,7 +80,6 @@ function Autorization() {
   };
     return (
       <div id='Autorization-page'>
-        <Header id='Autorization_header' type={"auth"}/>
         <div id='Autorization_content'>
             <form onSubmit={SubmitHandler} method="POST" id='Autorization_form'>
             <h1>Авторизация</h1>
@@ -91,7 +88,6 @@ function Autorization() {
             <div><MyButton text={"Войти"} type="Submit"/></div>
             </form>
         </div>
-        <Footer id='Autorization_footer'/>
       </div>
     );
   };

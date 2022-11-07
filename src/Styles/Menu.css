@@ -1,0 +1,59 @@
+.Menu_main
+{
+    width: 230px;
+}
+
+
+.Menu_wrapper > button
+{
+    width: 200px;
+}
+
+.Menu_wrapper
+{
+    z-index: 1;
+    height: 250px;
+    position: relative;
+    right: 250px;
+    background: -webkit-linear-gradient(180deg, rgb(18, 36, 107) 12%, rgb(57, 74, 161) 39%, rgb(255, 255, 255));
+    background: -moz-linear-gradient(180deg, rgb(18, 36, 107) 12%, rgb(57, 74, 161) 39%, rgb(255, 255, 255));
+    background: linear-gradient(180deg, rgb(18, 36, 107) 12%, rgb(57, 74, 161) 39%, rgb(255, 255, 255));
+    border: 6px solid #00FFFF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s all;
+}
+
+.Menu_wrapper.show
+{
+    transition: 0.5s all;
+    right: 0px;
+}
+
+.show_menu_button
+{
+    z-index: 2;
+    position: absolute;
+    right: 160px;
+    /*right:-35px;*/
+    bottom: 110px;
+    transition: 0.5s all;
+
+}
+
+.show_menu_button.show
+{
+    right:-35px;
+    bottom: 110px;
+    transition: 0.5s all;
+}
+
+.Menu .show
+{
+    display: flex;
+    flex-direction: column;
+}

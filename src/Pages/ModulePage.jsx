@@ -9,6 +9,7 @@ import ShopTable from "../Components/ShopTable";
 import StuffTable from "../Components/StuffTable";
 import Informator from "../Informator";
 import store from "../Store/Store";
+import "../Styles/Main.css";
 
 function ModulePage() {
   return (

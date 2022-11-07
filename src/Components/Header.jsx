@@ -36,15 +36,12 @@ const Header = function(props)
                 <div id="server_status"></div>
                 <div id="server_text">server</div>
                 <div id="button_panel">
-                    <MyButton text={"Личный кабинет"} />
-                    <MyButton text={"Помощь"} />
                 </div>
                 <div id="header_text">Личный кабинет</div>
                 <div id="username">{props.username}</div>
                 <div id="user_ava">
                     <div id="ava"><p id="text_ava">{props.username}</p></div>
                 </div>
-                <MyButton text={"Выйти"} />
             </div>
         )
         }

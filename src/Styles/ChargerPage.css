@@ -1,0 +1,42 @@
+#Charger_main
+{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 60px auto 60px;
+    row-gap: 10px;
+}
+
+
+#Charger_main .Charger
+{
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    height: 95%;
+    width: 90%;
+    justify-self: center;
+}
+
+#Charger_main #header
+{
+
+    grid-row: 1;
+    grid-column: 1 / 4;
+}
+#Charger_main #footer
+{
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.main_menu
+{
+    align-self: center;
+    position: absolute;
+    grid-column: 1;
+    grid-row: 2;
+}
+

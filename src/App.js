@@ -5,8 +5,8 @@ import Cabinet from "./Pages/Cabinet";
 import ModulePage from "./Pages/ModulePage";
 import Autorization from "./Pages/Autorization";
 import TestPage from "./Pages/TestPage";
-import AccumPage from "./Pages/AccumPage";
-import Modal from "./UI/Modal";
+import ChargerPage from "./Pages/ChargerPage";
+
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/Main" element={<Cabinet/>}></Route>
           <Route path="/ModulePage" element={<ModulePage/>}></Route>
           <Route path="/TestPage" element={<TestPage/>}></Route>
-          <Route path="/Accum" element={<AccumPage/>}></Route>
+          <Route path="/Charger" element={<ChargerPage/>}></Route>
         </Routes>
       </Router>
     </div>

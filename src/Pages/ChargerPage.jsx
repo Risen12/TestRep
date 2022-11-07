@@ -1,23 +1,28 @@
 import Header from "../Components/Header";
 import React, { Suspense } from "react";
 import Footer from "../Components/Footer";
-import "../Styles/AccumPage.css";
+import "../Styles/ChargerPage.css";
 import "../Styles/Main.css";
 import { useState } from "react";
 import MyButton from "../UI/MyButton";
+import Charger from "../Components/Charger";
+import Menu from "../Components/Menu";
+import "../Styles/Main.css";
 
-const Accum  = React.lazy(() => import("../Components/Accum"));
+const Accum  = React.lazy(() => import("../Components/Charger"));
 
 function AccumPage() {
   const [isOpenLazy, isOpenLazyChange] = useState(false);
     return (
-      <div id="Accum_main">
+      <div id="Charger_main">
         <Header  type={"device"}  username={"admin"}/>
-        {isOpenLazy &&  (    
+        <Charger/>
+        <div className="main_menu"><Menu/></div>
+        {/*{isOpenLazy &&  (    
         <Suspense fallback={<div>Loading...</div>}>       
            <Accum/>
-        </Suspense>)}
-        <MyButton onPress={() => {isOpenLazyChange(true)}} text={"Загрузить компонент"}></MyButton>
+        </Suspense>)} */}
+        {/* <MyButton onPress={() => {isOpenLazyChange(true);}} text={"Загрузить компонент"}></MyButton> */}
         <Footer />
       </div>
     );
