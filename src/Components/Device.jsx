@@ -26,7 +26,7 @@ const Device = function(props)
     }
 
     return(
-        <div id="device" >
+        <div id="device" className={props.className}>
             <div id="server_connect">
                 <div id="server_connect_text">Статус связи</div>
             </div>

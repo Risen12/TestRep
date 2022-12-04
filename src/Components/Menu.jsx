@@ -11,7 +11,7 @@ const Menu = function()
 
     return(
         <div className="Menu_main">
-            <div className={ShowMenu ?"show_menu_button show" : "show_menu_button"}><MyButton  text={">>"} onPress={() => {setMenuShow(ShowMenu === false ? true : false); console.log(ShowMenu)}}/></div>
+            <div className={ShowMenu ?"show_menu_button show" : "show_menu_button"}><MyButton  text={">>"} onPress={() => {setMenuShow(ShowMenu === false ? true : false)}}/></div>
             <div className={ShowMenu ? "Menu_wrapper show" : "Menu_wrapper"}>
                 <MyButton text={"Личный кабинет"}/>
                 <MyButton text={"Помощь"}/>

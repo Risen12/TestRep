@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/MyButton.css";
 
-const MyButton = ({id,text,onPress, type}) =>
+const MyButton = ({id,text,onPress, type,className}) =>
 {
 
     return(

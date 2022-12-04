@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "html-loader": "^4.2.0"
+    "html-loader": "^4.2.0",
+    "svg-inline-loader": "^0.8.2"
   }
 }

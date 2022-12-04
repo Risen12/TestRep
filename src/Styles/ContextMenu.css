@@ -1,0 +1,50 @@
+.context_menu_container
+{
+    margin: 0;
+    z-index: 2;
+    position:fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: collapse;
+    display: flex;
+    transition: 0.2s all;
+    background: transparent;
+}
+
+
+.context_menu_container.active
+{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s all;
+}
+
+
+.context_menu
+{
+    border: 3px solid #00FFFF;
+    border-radius: 25px;
+    box-shadow: 0 0px 2px 2px #2F4F4F;				
+    background: linear-gradient(#3D3F3F, black);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+}
+
+.context_menu button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 130px;
+    font-size: 15px;
+}

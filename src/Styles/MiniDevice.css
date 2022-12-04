@@ -1,0 +1,75 @@
+:root
+{
+    --x:0.5;
+    --y:0.5;
+}
+
+#minidevice
+{
+    display: flex;
+    width: 190px;
+    height: 30px;
+    flex-direction: column;
+}
+
+
+.circle
+{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    width: 80px;
+    height: 80px;
+    border: 3px solid #00FFFF;
+    border-radius: 40px;
+    box-shadow: 0 0px 2px 2px #2F4F4F;				
+    background: linear-gradient(#3D3F3F, black);
+    align-items: center;
+    justify-content: center;
+}
+
+
+.circle_img
+{
+    width: 50px;
+    height: 50px;
+}
+
+
+.banner
+{
+    display: flex;
+    align-items: center;
+    justify-content:right;
+    padding-right: 5px;
+    border: 3px solid #00FFFF;
+    position: relative;
+    z-index: 1;
+    margin-top: -55px;
+    margin-left: 12px;
+    width: 220px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0px 2px 2px #2F4F4F;				
+    background: linear-gradient(#3D3F3F, black);
+}
+
+
+.big_device
+{   
+    position: fixed;
+    z-index: 0;
+    transition: 0.7s all;
+    opacity: 0;
+}
+
+
+.big_device.active
+{
+    
+    margin-left: 50px;
+    margin-top: 5px;
+    opacity: 1;
+    z-index: 5;
+    transition: 0.7s all;
+}

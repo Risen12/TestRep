@@ -74,6 +74,7 @@
 
 .amper_data
 {
+    font-size: 19px;
     display:flex;
     flex-direction: row;
     gap: 15px;
@@ -185,7 +186,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 15px;
+    column-gap: 12px;
 }
 
 .button_panel > button
@@ -199,6 +200,12 @@
 {
     height: 32px;
     width: 35px;
+}
+
+#raise_img
+{
+    height: 45px;
+    width: 45px;
 }
 
 
