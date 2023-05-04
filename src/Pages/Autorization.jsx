@@ -7,12 +7,15 @@ import { connect, useDispatch } from "react-redux";
 import { UpdateData } from "../Store/Reducers/userSlice";
 import MyButton from "../UI/MyButton";
 import MyInput from "../UI/MyInput";
+import MyAlert from "../UI/MyAlert";
 let current_state = {info:{}};
 
 
 
 function Autorization() {
   const dispatch = useDispatch();
+  let Error = "";
+  const [AlertActive,setAlertActive] = useState(false);
   const navigator = useNavigate();
   async function Auth() {
     let auth_data = {User:user,Pass:pass};
@@ -37,12 +40,16 @@ function Autorization() {
       let store_data = {"user":user,"devices_count": Object.keys(json_result).length,"devices": json_result};
       console.log("Аутенфикация пройдена.");
       dispatch(UpdateData(store_data));
-      navigator("/Main");
       setCookie("auth",true,1);
+      navigator("/Main");
+      window.location.reload(false);
     }
     else
     {
-      alert("Ошибка авторизации");
+      Error = "Ошибка авторизации";
+      setAlertActive(true);
+      console.log(AlertActive);
+      //alert("Ошибка авторизации");
       setPass("");
       setUser("");
     }
@@ -56,6 +63,7 @@ function Autorization() {
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+
   };
 
 
@@ -83,11 +91,12 @@ function Autorization() {
         <div id='Autorization_content'>
             <form onSubmit={SubmitHandler} method="POST" id='Autorization_form'>
             <h1>Авторизация</h1>
-            <div>Имя пользователя</div><MyInput id="AuthInput" text={user} plholder="Имя пользователя" changeAction={handleChangeUser}/>
-            <div>Пароль</div><MyInput id="AuthInput" text={pass} plholder="Пароль" changeAction={handleChangePass} type="password"/>
+            <div>Имя пользователя</div><MyInput  text={user} plholder="Имя пользователя" changeAction={handleChangeUser}/>
+            <div>Пароль</div><MyInput  text={pass} plholder="Пароль" changeAction={handleChangePass} type="password"/>
             <div><MyButton text={"Войти"} type="Submit"/></div>
             </form>
         </div>
+        <MyAlert active={AlertActive} setShowAlert={setAlertActive} children={"Ошибка авторизации"} title={"Ошибка"}/>
       </div>
     );
   };

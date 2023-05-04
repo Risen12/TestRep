@@ -9,7 +9,7 @@
     align-items:center;
     justify-content: space-between;
     column-gap: 9px;
-    height: 67px;
+    height: 60px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -69,13 +69,14 @@
 {
 
     background: #BEB7BC;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     justify-content: center;
 }
 #text_ava
 {
+    font-size: 14px;
     color: black;
     display: flex;
     justify-content: center;
@@ -97,13 +98,16 @@
 
 #button_panel button
 {
-    height: 45px;
-    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 110px;
     font-size: 16px;
 }
 
 #settings_button
 {
-    height: 32px;
-    width: 35px;
+    height: 27px;
+    width: 32px;
 }

@@ -5,11 +5,13 @@ import "../Styles/Header.css";
 import MyButton from "../UI/MyButton";
 import accum_settings from "../Images/accum_settings1.png";
 import { useState } from "react";
+import Modal from "../UI/Modal";
 
 
 
 const Header = function(props)
 {
+    const [ModalActive, setModalActive] = useState(false);
     let dispatch = useDispatch();
 
         if(props.type === 'auth')
@@ -49,6 +51,7 @@ const Header = function(props)
         {
             return (
                 <div id="header">
+                <Modal active={ModalActive} setActive={setModalActive}/>
                 <div id="server_status"></div>
                 <div id="server_text">server</div>
                 <div id="button_panel">
@@ -59,7 +62,7 @@ const Header = function(props)
                                 .then(state => dispatch(UpdateData(state.data.values)));
                                 console.log("Функция Тест вызвана!");
                         }}/>
-                    <MyButton onPress={() => {props.setModalActive(true)}} text={<img src={accum_settings} id="settings_button" alt="settings"></img>} class="btn"/>
+                    <MyButton onPress={() => {setModalActive(true)}} text={<img src={accum_settings} id="settings_button" alt="settings"></img>} class="btn"/>
                 </div>
                 <div id="header_text">{props.device}</div>
                 <div id="username">{props.username}</div>

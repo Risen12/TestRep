@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../Styles/MiniDevice.css";
 import coffee_machine from "../Images/devices_icons/coffee_machine.svg";
 import vaccum_cleaner from "../Images/devices_icons/vaccum_cleaner_2.svg";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Device from "./Device";
-import ContextMenu from "./ContextMenu";
 const MiniDevice = function(props)
 {
     const navigator = useNavigate();
@@ -29,7 +28,7 @@ const MiniDevice = function(props)
     };
 
 
-
+    const [MousePosition, setMousePosition] = useState({x:0,y:0});
 
     const [BigDeviceActive,setBigDeviceActive] = useState(false);
     function ShowDevice(e)
@@ -57,14 +56,20 @@ const MiniDevice = function(props)
         }
     };
 
+    function ShowBigDeviceHandler(e)
+    {
+        setBigDeviceActive(true);
+        setMousePosition({x:e.pageX,y:e.PageY});
+    }
+
 
     return(
         <div id="mindevice" className={props.className} onClick={GoToDevice}>
             <div className="circle" onMouseEnter={() => setBigDeviceActive(true)} onMouseLeave={() => setBigDeviceActive(false)}>
-                    <img className="circle_img" src={DefineDevice()} alt="img not found" />
+                    <img className="circle_img" src={DefineDevice()} alt="img not found"/>
             </div>
-            <div className="banner" onMouseEnter={() => setBigDeviceActive(true)} onMouseLeave={() => setBigDeviceActive(false)}>{props.device}</div>
-        <Device className={BigDeviceActive ? "big_device active" : "big_device"} type={props.device} device={props.device} address={props.address} IP={props.IP}/>
+            <div className="banner" onMouseEnter={() => setBigDeviceActive(true)} onMouseLeave={() => setBigDeviceActive(false)}>{props.device}</div>     
+            <Device type={props.device} status={BigDeviceActive} device={props.device} address={props.address} IP={props.IP}/>
         </div>
     )
 };

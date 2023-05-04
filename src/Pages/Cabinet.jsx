@@ -17,18 +17,24 @@ function Cabinet() {
 
   function ContextMenuHandler(e)
   {
-    e.preventDefault();
-    setPositions({x: e.pageX, y:e.pageY});
-    console.log(positions);
-    setShowContextMenu(true);
+    console.log("I see click");
+    if(e.target.classList.contains("circle") || e.target.classList.contains("banner"))
+    {
+      e.preventDefault();
+      setPositions({x: e.pageX, y:e.pageY});
+      console.log(positions);
+      setShowContextMenu(true);
+    }
+    else
+      e.preventDefault();
   };
 
   const [modalActive,setModalActive] = useState(false);
     return (
-      <div id="main">
+      <div id="main" onContextMenu={(e) => e.preventDefault()}>
         <div id="cabinet_header"><Header  type={"cabinet"}  username={"admin"}/></div>
         <div id="cabinet_menu"><Menu/></div>
-        <div id="devices" onContextMenu={(e) => ContextMenuHandler(e)} ><DeviceTable active={modalActive} setActive={setModalActive} /></div>
+        <div id="devices" onContextMenu={(e) => ContextMenuHandler(e)} ><DeviceTable active={modalActive}  setActive={setModalActive}/></div>
         <div id="client_info"><InfoTable /></div>
         <div id="cabinet_footer"><Footer /></div>
         <Modal active={modalActive} setActive={setModalActive}/>

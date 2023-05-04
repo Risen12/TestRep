@@ -1,20 +1,31 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Device.css";
 import MyButton from "../UI/MyButton";
 
 const Device = function(props)
 {
+    const [BigDeviceActive,setBigDeviceActive] = useState(false);
     const navigator = useNavigate();
+
+    useEffect(() =>
+    {
+        setBigDeviceActive(props.status);
+    },[props.status]);
+
     function GoToDevice()
     {
+        console.log("I see");
         if(props !== undefined)
         {
-            if(props.device == "Пылесос")
+            console.log(props.device);
+            if(props.device.includes("Пылесос"))
             {
                 navigator("/TestPage");
             }
-            else if(props.device == "Кофейный модуль")
+            else if(props.device.includes("Кофейный модуль") || props.device.includes("Кофемашина"))
             {
                 navigator("/ModulePage");
             }
@@ -26,7 +37,7 @@ const Device = function(props)
     }
 
     return(
-        <div id="device" className={props.className}>
+        <div id="device" className={BigDeviceActive ? "active" : ""} onMouseOver={(e) => {e.stopPropagation();setBigDeviceActive(true)}} onMouseLeave={() => setBigDeviceActive(false)}>
             <div id="server_connect">
                 <div id="server_connect_text">Статус связи</div>
             </div>

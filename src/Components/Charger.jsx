@@ -50,7 +50,6 @@ const Charger = function({current_state})
         var hours = Math.floor((seconds % 86400) / 3600);
         var minutes = Math.floor((seconds % 3600) / 60);
         //var res_seconds = seconds % 60;
-
         if(hours < 1)
         {
             return `${minutes} минут`;
@@ -281,7 +280,7 @@ const Charger = function({current_state})
 
     setTimeout(1500);
 
-    console.log(State);
+    //console.log(State);
 
     setInterval(UpdateTime,1000);
 

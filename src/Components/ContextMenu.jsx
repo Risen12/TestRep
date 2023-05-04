@@ -15,7 +15,7 @@ const ContextMenu = function({positions,status})
     {
         setShowContextMenu(status);
         setPosition({positions});
-        styles = {top:`${positions.y}px`,left:`${positions.x}px`};
+        styles = {position};
     },[status,positions]);
 
 

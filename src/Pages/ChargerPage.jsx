@@ -4,7 +4,6 @@ import Footer from "../Components/Footer";
 import "../Styles/ChargerPage.css";
 import "../Styles/Main.css";
 import { useState } from "react";
-import MyButton from "../UI/MyButton";
 import store from "../Store/Store";
 import Charger from "../Components/Charger";
 import Menu from "../Components/Menu";
